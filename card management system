@@ -1,0 +1,126 @@
+# user_list = [
+#     {'name': 'Lisa', 'tel': '122222222222', 'qq': '123456789'},
+#     {'name': 'Jisoo', 'tel': '133333333333', 'qq': '987654321'},
+#     {'name': 'Rose', 'tel': '144444444444', 'qq': '321654987'},
+#     {'name': 'Jennie', 'tel': '155555555555', 'qq': '789456123'},
+# ]
+#
+#
+# def add_user():
+#     name = input('请输入姓名：')
+#     for user in user_list:
+#         if user['name'] == name:
+#             print('添加失败，用户已经存在！！！')
+#             return  # 如果用户已经存在直接结束整个函数
+#     tel = input('请输入电话：')
+#     qq = input('请输入qq号码：')
+#     # 创建保存用户输入的数据
+#     user = {'name': name, 'tel': tel, 'qq': qq}
+#     # 把创建好的名片放入列表里面
+#     user_list.append(user)
+#
+#
+# def delete_user():
+#     index = input('请输入要删除的序号(下标)：')
+#     # if not index.isdigit():
+#     #     print('输入的内容不合法')
+#     # else:
+#     #     if 0 > int(index) > len(user_list) - 1:
+#     #         print('输入的数字不在正确的范围内')
+#     #     else:
+#     #         answer = input('你确定要删除吗?(yes or no):')
+#     #         if answer.lower() == 'yes':
+#     #             user_list.pop(int(index))
+#     #             # del user_list[int(index)]
+#     #             # user_list.remove(user_list[int(index)])
+#     # 方式二
+#     if not index.isdigit():
+#         print('输入的内容不合法')
+#         return
+#     index = int(index)
+#     if 0 > int(index) > len(user_list) - 1:
+#         print('输入的数字不在正确的范围内')
+#         return
+#     answer = input('你确定要删除吗?(yes or no):')
+#     if answer.lower() == 'yes':
+#         user_list.pop(int(index))
+#
+#
+# def modify_user():
+#     index = input('请输入要修改的序号(下标)：')
+#     if not index.isdigit():
+#         print('输入的内容不合法')
+#         return
+#     index = int(index)
+#     if 0 > int(index) > len(user_list) - 1:
+#         print('输入的数字不在正确的范围内')
+#         return
+#     user = user_list[index]
+#     print('你要修改的信息是:\nname:{name} tel:{tel} qq:{qq}'.format(**user))
+#     new_name = input('请输入新的名字')
+#     for u in user_list:
+#         if u == new_name:
+#             print('修改失败，新的名字已经存在')
+#             return
+#     user['name'] = new_name
+#     user['tel'] = input('请输入新的电话号码')
+#     user['qq'] = input('请输入新的qq号')
+#
+#
+# def search_user():
+#     name = input('请输入要查询的名片姓名：')
+#     for user in user_list:
+#         if user['name'] == name:
+#             print('你查询的信息如下:\nname:{name} tel:{tel} qq:{qq}'.format(**user))
+#             break
+#     else:
+#         print('你输入的用户名不存在')
+#
+#
+# def show_all():
+#     print('序号\t\t姓名\t\t手机号\t\t\tqq')
+#     for i, user in enumerate(user_list):
+#         print(i, user['name'], user['tel'], user['qq'])
+#
+#
+# def exit_system():
+#     print('退出系统')
+#     answer = input('亲，你确定要退出吗?（yes or no）：')
+#     # if answer.lower() == 'yes':
+#     #     return True
+#     return answer.lower() == 'yes'
+#     # 也可以 exit() 内置函数直接结束整个程序 （还可以自己设置退出码）
+#     # sys.exit() sys模块里面的exit方法也可以退出
+#
+#
+# def start():
+#     while True:
+#         print('''
+#     ---------------------
+#     名片管理系统
+#     1:添加名片
+#     2.删除名片
+#     3.修改名片
+#     4.查询名片
+#     5.显示所有名片
+#     6.退出系统
+#     ---------------------''')
+#         operator = input('请输入要进行的操作（数字)：')
+#         if operator == '1':
+#             add_user()
+#         elif operator == '2':
+#             delete_user()
+#         elif operator == '3':
+#             modify_user()
+#         elif operator == '4':
+#             search_user()
+#         elif operator == '5':
+#             show_all()
+#         elif operator == '6':
+#             if exit_system():
+#                 break
+#         else:
+#             print('输入有误，请重新输入！！！')
+#
+#
+# start()
